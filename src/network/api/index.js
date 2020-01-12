@@ -11,8 +11,5 @@ export default {
   home,
   category,
   detail,
-  Goods,
-  GoodsParam,
-  Shop,
   mgcomm
 }

@@ -1,6 +1,6 @@
 <template>
   <div id="home">
-    <nav-bar class="nav-bar">
+    <nav-bar>
       <div slot="center">购物街</div>
     </nav-bar>
     <tab-control v-show="isTabFixed" class="fixed" @itemClick="tabClick"
@@ -13,7 +13,7 @@
             :pull-up-load="true"
             :probe-type="3">
       <div>
-        <home-swiper :banners="banners" ref="hSwiper"></home-swiper>
+        <home-swiper :banners="banners" ref="hySwiper"></home-swiper>
         <feature-view :features="recommends"></feature-view>
         <recommend-view></recommend-view>
         <tab-control @itemClick="tabClick"
@@ -64,14 +64,15 @@
     components: {
       NavBar,
       TabControl,
-      Scroll,
       HomeSwiper,
+      Scroll,
       BackTop,
       FeatureView,
       RecommendView,
       GoodsList
     },
     created() {
+
       // 1.请求多个数据
       this.getMultiData();
 
@@ -80,12 +81,6 @@
       this.getHomeProducts(NEW)
       this.getHomeProducts(SELL)
 
-    },
-    activated: function () {
-      this.$refs.hSwiper.startTimer()
-    },
-    deactivated: function () {
-      this.$refs.hSwiper.stopTimer()
     },
     methods: {
       tabClick(index) {
@@ -147,13 +142,6 @@
     /*position: relative;*/
     height: 100vh;
   }
-
-  .nav-bar {
-    background-color: var(--color-tint);
-    font-weight: 700;
-    color: #fff;
-  }
-
 
   .content {
     position: absolute;

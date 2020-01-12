@@ -38,6 +38,8 @@
   import DetailBottomBar from './childComps/DetailBottomBar'
   import BackTop from 'content/backTop/BackTop'
 
+  import {Goods,GoodsParam,Shop} from 'network/api/classExport'
+
   import {backTopMixin} from "@/common/mixin";
   import {BACKTOP_DISTANCE} from "@/common/const";
 
@@ -150,16 +152,16 @@
           this.topImages = data.itemInfo.topImages;
 
           // 2.3.获取商品信息
-          this.goods = new this.$api.detail.Goods(data.itemInfo, data.columns, data.shopInfo.services);
+          this.goods = new Goods(data.itemInfo, data.columns, data.shopInfo.services);
 
           // 2.4.获取店铺信息
-          this.shop = new this.$api.detail.Shop(data.shopInfo);
+          this.shop = new Shop(data.shopInfo);
 
           // 2.5.获取商品信息
           this.detailInfo = data.detailInfo
 
           // 2.6.保存参数信息
-          this.paramInfo = new this.$api.detail.GoodsParam(data.itemParams.info, data.itemParams.rule);
+          this.paramInfo = new GoodsParam(data.itemParams.info, data.itemParams.rule);
 
           // 2.7.保存评论信息
           if (data.rate.list) {

@@ -25,6 +25,10 @@
 
     /*border-bottom: 1px solid #eee;*/
     /*box-shadow: 0 1px 1px rgba(100,100,100,.08);*/
+
+    background-color: var(--color-tint);
+    font-weight: 700;
+    color: #fff;
   }
 
   .nav-left {

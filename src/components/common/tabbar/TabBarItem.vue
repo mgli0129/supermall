@@ -22,11 +22,6 @@
         default: 'red'
       }
     },
-    data() {
-      return{
-
-      }
-    },
     computed: {
       isActive() {
         return this.$route.path.indexOf(this.link) !== -1
