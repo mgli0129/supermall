@@ -7,7 +7,7 @@ node_modules
 .env.*.local
 
 # network config
-network/api/base.js
+/network/api
 
 # Log files
 npm-debug.log*
